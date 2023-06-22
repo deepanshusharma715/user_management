@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup </title>
+</head>
+<body>
+<h1>Sign up</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <label for="patient">Patient</label>
+  <input type="radio" id="patient" name="user_type" value="patient">
+  <label for="doctor">Doctor</label>
+  <input type="radio" id="doctor" name="user_type" value="doctor">
+  <button type="submit">Sign up</button>
+</form>
+
+</body>
+</html>

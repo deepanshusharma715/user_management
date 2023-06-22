@@ -1,0 +1,24 @@
+{% load static%}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+</head>
+<body>
+
+<h1>Patient Dashboard</h1>
+<p>Welcome {{ user.first_name }} {{ user.last_name }}</p>
+{% if user.profile_picture %}
+<img src="{{ user.profile_picture.url }}" alt="Profile picture">
+{% else %}
+<img src="{% static 'default.png' %}" alt="Default picture">
+{% endif %}
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }}, {{ user.pincode }}</p>
+
+</body>
+</html>
